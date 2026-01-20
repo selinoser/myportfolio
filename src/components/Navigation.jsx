@@ -6,7 +6,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 const drawerWidth = 240;
-const navItems = [['Skills', 'skills'], ['Experiences', 'experiences'], ['Contact', 'contact']];
+const navItems = [['Skills', 'skills'],['Experiences', 'experiences'],  ['Projects', 'projects'],  ['Contact', 'contact']];
 
 const Navigation = ({parentToChild, modeChange}) => {
 

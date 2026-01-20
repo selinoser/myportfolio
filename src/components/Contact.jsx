@@ -6,7 +6,10 @@ const Contact = () => {
         <div id="contact">
             <div className="items-container">
                 <div className="contact_wrapper">
-                    <h1>Contact Me</h1>
+                    <div className="section-header">
+                        <h2 className="title">Contact Me</h2>
+                        <div className="underline"></div>
+                    </div>
                     <div className='container'>
                         <a href='mailto:selinoser@gmail.com'>
                             <Button startIcon={<Mail />} variant="outlined" color="success" size="large">Let's get in touch</Button>
