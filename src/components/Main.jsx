@@ -8,7 +8,7 @@ const Main = () => {
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          <img src="https://media.licdn.com/dms/image/v2/C5603AQFXnCdMufnCYA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1536351083366?e=1750291200&v=beta&t=GQSbf_NirtqmBlMaSafvy9B3YSlV5CPPCyRWrImUE9Q" alt="Avatar" />
+          <img src="/img/avatar.jpg" alt="Avatar" />
         </div>
         <div className="content">
           <div className="social_icons">
