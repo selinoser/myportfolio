@@ -8,7 +8,7 @@ const Main = () => {
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          <img src="/img/avatar.jpg" alt="Avatar" />
+          <img src="../img/avatar.jpg" alt="Avatar" />
         </div>
         <div className="content">
           <div className="social_icons">
