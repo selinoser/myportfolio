@@ -68,10 +68,6 @@ export const skills = [
         iconUrl: "/img/skills/sass.svg"
     },
     {
-        name: "Sketch",
-        iconUrl: "/img/skills/sketch.svg"
-    },
-    {
         name: "Tailwindcss",
         iconUrl: "/img/skills/tailwindcss.svg"
     },
