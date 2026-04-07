@@ -14,7 +14,7 @@ const Skills = () => {
                     {skills.map((item, index) => (
                         <div key={index} className="skill-card">
                             <div className="icon-box">
-                                <img src={item.iconUrl} alt={item.name} />
+                                <img src={item.iconUrl} alt={item.name} loading="lazy" width="50" height="50" />
                             </div>
                             <span className="skill-name">{item.name}</span>
                         </div>

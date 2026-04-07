@@ -33,7 +33,7 @@ const Project = () => {
     }, []);
 
     return (
-        <section id="projects">
+        <section id="projects" className="project-section">
             <div className="projects-container">
                  <div className="section-header">
                     <h2 className="title">GitHub Projects</h2>

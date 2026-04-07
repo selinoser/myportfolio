@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, lazy, Suspense } from 'react'
 import FadeIn from './components/ui/FadeIn';
 import Main from './components/Main';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-import Skills from './components/Skills';
-import Timeline from './components/Timeline';
-import Contact from './components/Contact';
-import Project from './components/Project';
+
+const Skills = lazy(() => import('./components/Skills'));
+const Timeline = lazy(() => import('./components/Timeline'));
+const Project = lazy(() => import('./components/Project'));
+const Contact = lazy(() => import('./components/Contact'));
+
+const LoadingFallback = () => (
+  <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}></div>
+);
 
 const App = () => {
 
@@ -43,10 +48,12 @@ const App = () => {
       <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
       <FadeIn transitionDuration={700}>
         <Main />
-        <Skills />
-        <Timeline />
-        <Project />
-        <Contact /> 
+        <Suspense fallback={<LoadingFallback />}>
+          <Skills />
+          <Timeline />
+          <Project />
+          <Contact /> 
+        </Suspense>
       </FadeIn>
       <Footer />
     </div>

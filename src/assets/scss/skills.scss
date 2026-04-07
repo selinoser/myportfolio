@@ -1,9 +1,19 @@
 .skills-section {
-    padding: 80px 0;
+    min-height: 100vh;
+    padding: 64px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .skills-container {
-    padding: 0 20px;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .skills-grid {
@@ -13,6 +23,8 @@
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .skill-card {
@@ -49,9 +61,15 @@
         font-weight: 600;
         color: #1e293b;
         transition: color 0.3s;
-        .light-mode & { color: #1e293b; }
-        .dark-mode & { color: #f8fafc; }
-      
+
+        .light-mode & {
+            color: #1e293b;
+        }
+
+        .dark-mode & {
+            color: #f8fafc;
+        }
+
     }
 
     // --- MODA GÖRE TASARIM ---
@@ -67,12 +85,21 @@
 
     .light-mode & {
         background: #ffffff;
-        border: 1px solid #f1f5f9;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.08);
 
         &:hover {
-            border-color: #5000ca;
-            box-shadow: 0 10px 25px rgba(80, 0, 202, 0.1);
+            border-color: #6366f1;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+            transform: translateY(-8px);
+
+            .icon-box img {
+                filter: grayscale(0%);
+            }
+
+            .skill-name {
+                color: #6366f1;
+            }
         }
     }
 
@@ -96,18 +123,73 @@
 
 // Mobil Düzenlemeleri
 @media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr); // Mobilde 3'lü yan yana
-        gap: 15px;
+    .skills-section {
+        padding: 60px 0;
+        overflow: hidden;
     }
 
-    .skill-card .icon-box {
-        width: 65px;
-        height: 65px;
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        padding: 0 10px;
+        max-width: 100%;
+        width: 100%;
+    }
 
-        img {
-            height: 40px;
+    .skill-card {
+        padding: 15px 8px;
+        width: 100%;
+        max-width: 100%;
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 8px;
+
+            img {
+                height: 32px;
+                width: 32px;
+            }
+        }
+
+        .skill-name {
+            font-size: 0.75rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        padding: 40px 0;
+        overflow: hidden;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 0 8px;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .skill-card {
+        padding: 10px 4px;
+        width: 100%;
+        max-width: 100%;
+
+        .icon-box {
             width: 40px;
+            height: 40px;
+            margin-bottom: 6px;
+
+            img {
+                height: 24px;
+                width: 24px;
+            }
+        }
+
+        .skill-name {
+            font-size: 0.65rem;
         }
     }
 }

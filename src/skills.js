@@ -32,16 +32,8 @@ export const skills = [
         iconUrl: "/img/skills/jquery.svg"
     },
     {
-        name: "LESS",
-        iconUrl: "/img/skills/less.svg"
-    },
-    {
         name: "Microsoft SQL Server",
         iconUrl: "/img/skills/microsoft-sql-server.svg"
-    },
-    {
-        name: "MySql",
-        iconUrl: "/img/skills/mysql.svg"
     },
     {
         name: "Next.js",
@@ -54,14 +46,6 @@ export const skills = [
     {
         name: "ReactJS",
         iconUrl: "/img/skills/reactjs.svg"
-    },
-    {
-        name: "React Router",
-        iconUrl: "/img/skills/reactrouter.svg"
-    },
-    {
-        name: "Redux",
-        iconUrl: "/img/skills/redux.svg"
     },
     {
         name: "Sass",

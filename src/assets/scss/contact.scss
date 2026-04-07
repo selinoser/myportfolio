@@ -1,0 +1,220 @@
+.contact-section {
+    min-height: 100vh;
+    padding: 64px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-container {
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+    
+    &:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+        
+        svg {
+            transform: translateX(4px);
+        }
+    }
+    
+    svg {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .light-mode & {
+        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
+        
+        &:hover {
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35);
+        }
+    }
+}
+
+.contact-section .social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-section .social-link {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    color: #94a3b8;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    &:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: #a78bfa;
+        box-shadow: 0 8px 25px rgba(167, 139, 250, 0.25);
+        
+        svg {
+            transform: scale(1.1);
+        }
+    }
+    
+    svg {
+        font-size: 1.4rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .light-mode & {
+        background: rgba(0, 0, 0, 0.04);
+        border-color: rgba(0, 0, 0, 0.08);
+        color: #64748b;
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 0, 0, 0.12);
+            color: #6366f1;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+        }
+    }
+}
+
+.contact-section .subtitle {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-top: 16px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    
+    .light-mode & {
+        color: #64748b;
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .contact-content {
+        gap: 16px;
+    }
+    
+    .contact-button {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+        min-height: 48px;
+        min-width: 48px;
+    }
+    
+    .contact-section .social-link {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
+        
+        svg {
+            font-size: 1.2rem;
+        }
+    }
+    
+    .contact-section .subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-content {
+        gap: 12px;
+    }
+    
+    .contact-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        min-height: 48px;
+        min-width: 48px;
+    }
+    
+    .contact-section .social-link {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
+        
+        svg {
+            font-size: 1.1rem;
+        }
+    }
+    
+    .contact-section .subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+.footer-note {
+    margin-top: 60px;
+    text-align: center;
+    
+    p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 0.95rem;
+        color: #64748b;
+        
+        .light-mode & {
+            color: #94a3b8;
+        }
+    }
+    
+    .heart-icon {
+        font-size: 1rem;
+        color: #ec4899;
+        animation: heartbeat 1.5s infinite ease-in-out;
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}

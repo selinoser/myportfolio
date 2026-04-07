@@ -9,8 +9,8 @@ import { experiences } from "../experiences";
 
 const Timeline = () => {
     return (
-        <div id="experiences">
-            <div className="items-container">
+        <section id="experiences" className="experiences-section">
+            <div className="experiences-container">
                 <div className="section-header">
                     <h2 className="title">Experiences</h2>
                     <div className="underline"></div>
@@ -29,7 +29,7 @@ const Timeline = () => {
                             >
                                 <div className="vertical-timeline-content">
                                     <div className="vertical-timeline-element-logo">
-                                        <img src={item.companyLogo} height={40} />
+                                        <img src={item.companyLogo} alt={`${item.company} logo`} height={40} width={40} loading="lazy" />
                                     </div>
                                     <div>
                                         <h4 className="vertical-timeline-element-title">
@@ -44,7 +44,7 @@ const Timeline = () => {
 
                 </VerticalTimeline>
             </div>
-        </div>
+        </section>
     )
 }
 
