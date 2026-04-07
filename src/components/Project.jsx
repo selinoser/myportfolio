@@ -50,8 +50,8 @@ const Project = () => {
                                     <FolderOpenIcon fontSize="inherit" />
                                 </div>
                                 <div className="external-links">
-                                    <a href={repo.html_url} target="_blank"><GitHubIcon fontSize="inherit" /></a>
-                                    {repo.homepage && <a href={repo.homepage} target="_blank"><LaunchIcon fontSize="inherit" /></a>}
+                                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" aria-label={`View ${repo.name} on GitHub`}><GitHubIcon fontSize="inherit" /></a>
+                                    {repo.homepage && <a href={repo.homepage} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${repo.name} website`}><LaunchIcon fontSize="inherit" /></a>}
                                 </div>
                             </div>
 

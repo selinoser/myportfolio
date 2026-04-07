@@ -29,22 +29,22 @@ const Navigation = ({ parentToChild, modeChange }) => {
 
   useEffect(() => {
     const sections = navItems.map(item => item.href);
-    
+
     const handleScrollSpy = () => {
       const scrollPos = window.scrollY;
-      
+
       // Hero section (top of page)
       if (scrollPos < 200) {
         setActiveLink('');
         return;
       }
-      
+
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
-          
+
           if (scrollPos >= offsetTop - 100 && scrollPos < offsetBottom - 100) {
             setActiveLink(sectionId);
             break;
@@ -52,7 +52,7 @@ const Navigation = ({ parentToChild, modeChange }) => {
         }
       }
     };
-    
+
     window.addEventListener('scroll', handleScrollSpy);
     return () => window.removeEventListener('scroll', handleScrollSpy);
   }, []);
@@ -76,16 +76,16 @@ const Navigation = ({ parentToChild, modeChange }) => {
       <nav className={`modern-navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <div className="nav-logo">
-            <button onClick={scrollToTop} className="logo-button">
-<img src="/img/logo.png" alt="Logo" className="logo-image" loading="lazy" width="40" height="40" />
+            <button onClick={scrollToTop} className="logo-button" aria-label="Go to home page">
+              <img src="/img/logo.png" alt="Logo" className="logo-image" loading="lazy" width="40" height="40" />
             </button>
           </div>
 
           <ul className="nav-links">
             {navItems.map((item) => (
               <li key={item.href}>
-                <button 
-                  className={`nav-link ${activeLink === item.href ? 'active' : ''}`} 
+                <button
+                  className={`nav-link ${activeLink === item.href ? 'active' : ''}`}
                   onClick={() => scrollToSection(item.href)}
                 >
                   {item.label}
@@ -95,15 +95,15 @@ const Navigation = ({ parentToChild, modeChange }) => {
           </ul>
 
           <div className="nav-actions">
-            <button 
-              className="theme-toggle" 
+            <button
+              className="theme-toggle"
               onClick={modeChange}
               aria-label="Toggle theme"
             >
               {mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
             </button>
 
-            <button 
+            <button
               className="mobile-menu-btn"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
@@ -117,15 +117,15 @@ const Navigation = ({ parentToChild, modeChange }) => {
       <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-menu-header">
           <img src="/img/logo.png" alt="Logo" className="logo-image" loading="lazy" width="40" height="40" />
-          <button className="close-btn" onClick={() => setMobileOpen(false)}>
+          <button className="close-btn" onClick={() => setMobileOpen(false)} aria-label="Close menu">
             <CloseIcon />
           </button>
         </div>
         <ul className="mobile-nav-links">
           {navItems.map((item) => (
             <li key={item.href}>
-              <button 
-                className="mobile-nav-link" 
+              <button
+                className="mobile-nav-link"
                 onClick={() => scrollToSection(item.href)}
               >
                 {item.label}
@@ -135,9 +135,9 @@ const Navigation = ({ parentToChild, modeChange }) => {
         </ul>
       </div>
 
-      <div 
-        className={`mobile-overlay ${mobileOpen ? 'open' : ''}`} 
-        onClick={() => setMobileOpen(false)} 
+      <div
+        className={`mobile-overlay ${mobileOpen ? 'open' : ''}`}
+        onClick={() => setMobileOpen(false)}
       />
     </>
   );
