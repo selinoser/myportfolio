@@ -4,14 +4,16 @@ const FadeIn = ({
     children,
     delay = 50,
     transitionDuration = 400,
-    wrapperTag: WrapperTag = "div",
-    childTag: ChildTag = "div",
+    wrapperTag = "div",
+    childTag = "div",
     className = "",
     childClassName = "",
     visible = true,
     onComplete,
     direction = "down",
 }) => {
+    const WrapperTag = wrapperTag;
+    const ChildTag = childTag;
     const childrenArray = React.Children.toArray(children).filter(Boolean);
     const childCount = visible ? childrenArray.length : 0;
     const [maxIsVisible, setMaxIsVisible] = useState(0);
